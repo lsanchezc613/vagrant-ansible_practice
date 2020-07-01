@@ -12,6 +12,9 @@ Vagrant.configure("2") do |config|
       vb.cpus = 2
 
       config.vm.provision :ansible do |ansible|
-        ansible.playbook = "playbook.yml"
+        ansible.inventory_path = "ansible/practice/inventory"
+        ansible.verbose = 'vvv'
+        ansible.playbook = "ansible/practice.yml"
+        
     end
   end
